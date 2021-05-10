@@ -10,10 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
 class MessageRestController {
 
     @Autowired
-    Configuration limitConfiguration;
+    LimitBean limitConfiguration;
 
-    @GetMapping("/msg")
-    public Configuration getMsg() {
+    @Autowired
+    MuleBean muleBean;
+
+    @GetMapping("/limits")
+    public LimitBean getLimits() {
         return limitConfiguration;
+    }
+
+    @GetMapping("/mule")
+    public MuleBean getMuleConfig() {
+        return muleBean;
     }
 }

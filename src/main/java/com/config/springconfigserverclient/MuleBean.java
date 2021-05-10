@@ -8,11 +8,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties("limits-service")
+@ConfigurationProperties("mule-server")
 @Getter
 @Setter
-public class Configuration {
-    private int maximum;
-    private int minimum;
-
+@NoArgsConstructor
+@AllArgsConstructor
+public class MuleBean {
+    private int port;
+    private  String host;
 }
